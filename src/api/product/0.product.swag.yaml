@@ -1,0 +1,47 @@
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+        productFrameId:
+          type: integer
+        title:
+          type: string
+        label:
+          type: string
+        type:
+          type: string
+        status:
+          type: string
+        goalAmount:
+          type: integer
+        collectedAmount:
+          type: integer
+        yieldRate:
+          type: integer
+        commissionRate:
+          type: integer
+        openDate:
+          type: string
+        closeDate:
+          type: string
+        investDate:
+          type: string
+        repayDate:
+          type: string
+        investorNo:
+          type: integer
+        localPeopleNoOfInvestor:
+          type: integer
+        isOpen:
+          type: string
+          enum:
+            - Y
+            - N
+        isPrivate:
+          type: string
+          enum:
+            - Y
+            - N

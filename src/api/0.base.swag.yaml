@@ -1,0 +1,23 @@
+tags:
+  - name: health
+    description: check health
+  - name: contract
+    description: get contract info
+  - name: productFrame
+    description: CRUD for productFrame
+  - name: product
+    description: CRUD for product
+  - name: productType
+    description: CRUD for productType
+  - name: productStatus
+    description: CRUD for productStatus
+
+components:
+  securitySchemes:
+    bearerAuth: # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT # optional, arbitrary value for documentation purposes
+# 2) Apply the security globally to all operations
+security:
+  - bearerAuth: []

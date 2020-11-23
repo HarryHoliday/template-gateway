@@ -1,0 +1,20 @@
+/productType:
+  get:
+    security:
+      - bearerAuth: []
+    tags:
+      - productType
+    summary: get productType info list
+    description: return [{productType}]
+    parameters:
+      - name: page
+        in: query
+      - name: size
+        in: query
+    responses:
+      200:
+        description: [{ productType }]
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductType'

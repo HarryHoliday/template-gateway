@@ -1,0 +1,30 @@
+/contract:
+  post:
+    security:
+      - bearerAuth: []
+    tags:
+      - contract
+    summary: create a contract info
+    description: return contract id
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Contract"
+          example:
+            plantId: 1
+            title: 서울숲발전소계약
+            amount: 1000000000
+            interestRate: 0.12
+            bankCode: 010
+            bankAccNo: 0120123023230
+            borrowerName: 테스터
+            loanDate: "3000-01-01 01:10:10"
+            repayDate: "3001-01-01 01:10:10"
+    responses:
+      200:
+        description:

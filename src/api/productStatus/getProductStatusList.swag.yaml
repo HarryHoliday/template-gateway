@@ -1,0 +1,20 @@
+/productStatus:
+  get:
+    security:
+      - bearerAuth: []
+    tags:
+      - productStatus
+    summary: get productStatus info list
+    description: return [{productStatus}]
+    parameters:
+      - name: page
+        in: query
+      - name: size
+        in: query
+    responses:
+      200:
+        description: [{ productStatus }]
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductStatus'

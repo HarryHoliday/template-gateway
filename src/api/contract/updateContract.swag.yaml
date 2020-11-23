@@ -1,0 +1,22 @@
+/contract:
+  put:
+    security:
+      - bearerAuth: []
+    tags:
+      - contract
+    summary: update a contract
+    description: return a updated contract info
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Contract'
+          example:
+            id: 1
+    responses:
+      200:
+        description: contract

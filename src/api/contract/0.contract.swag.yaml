@@ -1,0 +1,34 @@
+components:
+  schemas:
+    Contract:
+      type: object
+      properties:
+        id:
+          type: integer
+        plantId:
+          type: integer
+        title:
+          type: string
+        amount:
+          type: integer
+        interestRate:
+          type: string
+        bankCode:
+          type: string
+        bankAccNo:
+          type: string
+        borrowerName:
+          type: string
+        loanDate:
+          type: string
+        repayDate:
+          type: string
+        isLaunched:
+          type: string
+          enum:
+            - Y
+            - N
+        createdAt:
+          type: string
+        updatedAt:
+          type: string

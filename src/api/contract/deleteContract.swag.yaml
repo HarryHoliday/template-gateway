@@ -1,0 +1,22 @@
+/contract:
+  delete:
+    security:
+      - bearerAuth: []
+    tags:
+      - contract
+    summary: delete a contract
+    description:
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Contract'
+          example:
+            id: 1
+    responses:
+      200:
+        description:

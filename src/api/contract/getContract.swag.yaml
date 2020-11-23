@@ -1,0 +1,22 @@
+/contract/{contractId}:
+  get:
+    security:
+      - bearerAuth: []
+    tags:
+      - contract
+    summary: get a contract info
+    description: return {contract info}
+    parameters:
+      - name: contractId
+        in: path
+        description: Contract ID
+        required: true
+        schema:
+          type: integer
+    responses:
+      200:
+        description: { contract info }
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Contract'

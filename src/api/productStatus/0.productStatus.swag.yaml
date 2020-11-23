@@ -1,0 +1,15 @@
+tags:
+  - name: productStatus
+    description: CRUD for productStatus info
+
+components:
+  schemas:
+    ProductStatus:
+      type: object
+      properties:
+        type:
+          type: string
+        text:
+          type: string
+        comment:
+          type: string

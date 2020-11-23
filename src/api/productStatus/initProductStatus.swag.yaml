@@ -1,0 +1,42 @@
+/productStatus/init:
+  post:
+    security:
+      - bearerAuth: []
+    tags:
+      - productStatus
+    summary: init productStatus meta info
+    description: return productStatusIds
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ProductStatus'
+          example:
+            - type: READY
+              text: 모집준비중
+              comment: 모집준비중
+            - type: COLLECT
+              text: 모집중
+              comment: 모집중
+            - type: CANCEL
+              text: 모집취소
+              comment: 모집취소
+            - type: FAIL
+              text: 모집실패
+              comment: 모집실패
+            - type: READY_PAYMENT
+              text: 지급준비중
+              comment: 지급준비중
+            - type: PAYMENT
+              text: 지급중
+              comment: 지급중
+            - type: DONE
+              text: 지급완료
+              comment: 지급완료
+    responses:
+      200:
+        description: productStatusIds

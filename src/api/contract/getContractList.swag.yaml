@@ -1,0 +1,22 @@
+/contract:
+  get:
+    security:
+      - bearerAuth: []
+    tags:
+      - contract
+    summary: get contracts info list
+    description: return [{contract info}]
+    parameters:
+      - name: page
+        in: query
+      - name: size
+        in: query
+      - name: summary
+        in: query
+    responses:
+      200:
+        description: [{ contract info }]
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Contract'

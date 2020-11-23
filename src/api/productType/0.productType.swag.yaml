@@ -1,0 +1,15 @@
+tags:
+  - name: productType
+    description: CRUD for productType info
+
+components:
+  schemas:
+    ProductType:
+      type: object
+      properties:
+        type:
+          type: string
+        text:
+          type: string
+        comment:
+          type: string

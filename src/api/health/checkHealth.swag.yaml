@@ -1,0 +1,8 @@
+/health:
+  get:
+    tags:
+      - health
+    description: return I'm good
+    responses:
+      200:
+        description: return I'm good

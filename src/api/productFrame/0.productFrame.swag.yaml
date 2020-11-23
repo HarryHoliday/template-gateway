@@ -1,0 +1,25 @@
+tags:
+  - name: productFrame
+    description: CRUD for productFrame
+
+components:
+  schemas:
+    ProductFrame:
+      type: object
+      properties:
+        id:
+          type: integer
+        contractId:
+          type: integer
+        title:
+          type: string
+        capacity:
+          type: integer
+        currentLoanAmount:
+          type: integer
+        totalInvestorNo:
+          type: integer
+        totalLocalPeopleInvestorNo:
+          type: integer
+        region:
+          type: string

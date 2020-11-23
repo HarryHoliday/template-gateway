@@ -1,0 +1,20 @@
+/productFrame:
+  get:
+    security:
+      - bearerAuth: []
+    tags:
+      - productFrame
+    summary: get productFrame info list
+    description: return [{productFrame info}]
+    parameters:
+      - name: page
+        in: query
+      - name: size
+        in: query
+    responses:
+      200:
+        description: [{ productFrame info }]
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductFrame'

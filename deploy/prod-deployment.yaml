@@ -1,0 +1,31 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: prod-gateway-p2p
+  namespace: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prod-gateway-p2p
+  template:
+    metadata:
+      labels:
+        app: prod-gateway-p2p
+    spec:
+      imagePullSecrets:
+        - name: gcrio
+      containers:
+        - name: prod-gateway-p2p
+          image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
+          ports:
+            - containerPort: 80
+      #     volumeMounts:
+      #       - mountPath: /tmp2
+      #         name: env
+      # volumes:
+      #   - configMap:
+      #       defaultMode: 256
+      #       name: prod-env
+      #       optional: false
+      #     name: env
