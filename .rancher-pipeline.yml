@@ -5,7 +5,7 @@ stages:
           image: node:12-alpine
           shellScript: |-
             touch .env
-            echo ${ENV_SALT} ${ENV_DB} ${ENV_COTE} ${ENV_GATEWAY_P2P}\
+            echo ${ENV_SALT} ${ENV_DB} ${ENV_COTE} ${ENV_GATEWAY}\
             | tr " " "\n" > .env
             cat .env
             npm install -g npm
@@ -25,11 +25,11 @@ stages:
             sourceKey: dev-env
             targetKey: ENV_DB
           - sourceName: env-cote
-            sourceKey: dev-cote-key-p2p
+            sourceKey: dev-cote-key
             targetKey: ENV_COTE
           - sourceName: env-gateway
-            sourceKey: dev-env-gateway-p2p
-            targetKey: ENV_GATEWAY_P2P
+            sourceKey: dev-env-gateway
+            targetKey: ENV_GATEWAY
         when:
           branch: develop
           event: [push]
@@ -37,7 +37,7 @@ stages:
           image: node:12-alpine
           shellScript: |-
             touch .env
-            echo ${ENV_SALT} ${ENV_DB} ${ENV_COTE} ${ENV_GATEWAY_P2P}\
+            echo ${ENV_SALT} ${ENV_DB} ${ENV_COTE} ${ENV_GATEWAY}\
             | tr " " "\n" > .env
             cat .env
             npm install -g npm
@@ -54,11 +54,11 @@ stages:
             sourceKey: prod-env
             targetKey: ENV_DB
           - sourceName: env-cote
-            sourceKey: prod-cote-key-p2p
+            sourceKey: prod-cote-key
             targetKey: ENV_COTE
           - sourceName: env-gateway
-            sourceKey: prod-env-gateway-p2p
-            targetKey: ENV_GATEWAY_P2P
+            sourceKey: prod-env-gateway
+            targetKey: ENV_GATEWAY
         when:
           branch: master
           event: [push]
@@ -67,7 +67,7 @@ stages:
       - publishImageConfig:
           dockerfilePath: ./Dockerfile
           buildContext: .
-          tag: root-service/root-p2p/gateway-p2p:${CICD_EXECUTION_SEQUENCE}
+          tag: /test:${CICD_EXECUTION_SEQUENCE}
           pushRemote: true
           registry: gcr.io
   - name: Dev Deploy

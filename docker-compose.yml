@@ -1,14 +1,14 @@
-version: "3"
+version: '3'
 services:
   root-plant:
-    container_name: "gateway-p2p"
-    hostname: "gateway-p2p"
+    container_name: 'gateway'
+    hostname: 'gateway'
     restart: always
     build: .
     ports:
-      - "3300:3300"
+      - '3300:3300'
 
 networks:
   default:
     external:
-      name: rootenergy
+      name: test

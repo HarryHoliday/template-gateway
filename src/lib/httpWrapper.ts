@@ -3,8 +3,8 @@ import cote, { Requester } from 'cote';
 
 export type CoteRequester = Requester;
 
-const name = process.env.APP_COTE_NAME || 'GATEWAY_P2P';
-const key = process.env.APP_COTE_KEY || 'p2p';
+const name = process.env.APP_COTE_NAME || 'GATEWAY';
+const key = process.env.APP_COTE_KEY || '';
 
 const requester: Requester = new cote.Requester({ name, key });
 

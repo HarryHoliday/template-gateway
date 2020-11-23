@@ -17,14 +17,11 @@
             $ref: '#/components/schemas/ProductType'
           example:
             - type: PF
-              text: 프로젝트파이넨스
-              comment: Project Finance 투자기간이 1년을 초과한 상품, 3개월 마다 상환
+              text: ''
+              comment: pf
             - type: BRIDGE
-              text: 브릿지
-              comment: 투자기간이 1년이하인 상품, 1개월 마다 상환
-            - type: INNOVATION
-              text: 혁신상품
-              comment: 혁신금융조건을 만족하는 상품, 투자제한금액이 보정됨
+              text: ''
+              comment: bridge
     responses:
       200:
         description: productTypeIds

@@ -1,22 +1,22 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: prod-gateway-p2p
+  name: prod-gateway
   namespace: prod
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: prod-gateway-p2p
+      app: prod-gateway
   template:
     metadata:
       labels:
-        app: prod-gateway-p2p
+        app: prod-gateway
     spec:
       imagePullSecrets:
         - name: gcrio
       containers:
-        - name: prod-gateway-p2p
+        - name: prod-gateway
           image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
           ports:
             - containerPort: 80
